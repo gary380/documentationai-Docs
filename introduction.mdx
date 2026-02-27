@@ -1,0 +1,117 @@
+---
+title: Introduction to BenefitsInteractive
+description: Discover BenefitsInteractive, a SaaS platform that transforms benefits documents into an interactive hub for employees, HR teams, and brokers to streamline communication and reduce inquiries.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## Overview
+
+BenefitsInteractive transforms your plan documents, FAQs, policies, and other materials into a single interactive benefits hub. Employees get instant answers to their questions using natural language, while HR teams and brokers save time on repetitive inquiries. Centralize benefits information to boost engagement and ensure compliance during open enrollment and beyond.
+
+## Key Features
+
+<Columns cols={3}>
+
+<Card title="Interactive Benefits Hub" icon="book-open" href="#how-it-works">
+  One central place for all benefits education, searchable Q&A, and resources that employees actually use.
+</Card>
+
+<Card title="On-Demand Q&A" icon="search" href="/quickstart">
+  Employees ask questions in plain language and receive organization-specific answers instantly.
+</Card>
+
+<Card title="Enrollment Pathways" icon="trending-up" href="/features">
+  Launch-ready pages for open enrollment, plan changes, and new programs with guided pathways.
+</Card>
+
+<Card title="Compliance Tools" icon="shield" href="/compliance">
+  Organize documents, summaries, and notices in a compliant, easy-to-update format.
+</Card>
+
+</Columns>
+
+## How It Works
+
+Follow these steps to set up your interactive benefits hub:
+
+<Steps>
+
+<Step title="Connect Your Materials" icon="upload">
+
+Upload your SPDs, plan summaries, carrier PDFs, FAQs, and video content to the dashboard at `https://app.benefitsinteractive.app`.
+
+</Step>
+
+<Step title="We Build Your Hub" icon="settings">
+
+Our platform converts materials into searchable Q&A, structured topics, and personalized enrollment pathways.
+
+````bash
+# Example: Upload via dashboard or API
+curl -X POST https://api.benefitsinteractive.app/v1/documents \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -F "file=@benefits.pdf"
+````
+
+</Step>
+
+<Step title="Launch and Measure" icon="rocket">
+
+Track visits, top questions, and usage analytics to refine your communications.
+
+</Step>
+
+</Steps>
+
+## Who It's For
+
+<Tabs>
+
+<Tab title="HR & People Teams" icon="users">
+
+Reduce support tickets by 30-50% and make benefits easy to understand for every employee. Stay compliant with organized, accessible documents.
+
+</Tab>
+
+<Tab title="Brokers & Consultants" icon="handshake">
+
+Differentiate your services with interactive education that clients engage with year-round.
+
+</Tab>
+
+<Tab title="Employees" icon="person-standing">
+
+Get answers in seconds via natural-language search—no more digging through PDFs.
+
+</Tab>
+
+</Tabs>
+
+## Quick Links
+
+<Columns cols={2}>
+
+<Card title="Get Started" icon="play" href="/quickstart">
+  Sign up and upload your first document in minutes.
+</Card>
+
+<Card title="API Reference" icon="code" href="/api">
+  Integrate programmatically with our REST API.
+</Card>
+
+<Card title="Open Enrollment Guide" icon="calendar" href="/guides/open-enrollment">
+  Best practices for launch-ready campaigns.
+</Card>
+
+<Card title="Changelog" icon="git-branch" href="/changelog">
+  Stay updated with the latest releases.
+</Card>
+
+</Columns>
+
+<Callout kind="tip" title="Ready to dive in?">
+  Head to the [Quickstart guide](/quickstart) to create your first interactive hub.
+</Callout>

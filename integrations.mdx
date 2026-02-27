@@ -1,0 +1,165 @@
+---
+title: Connecting and Integrating Materials
+description: Learn how to connect your benefits materials and integrate with third-party tools to enhance your interactive hub's functionality and data flow.
+---
+
+## Overview
+
+Connect your benefits materials like carrier PDFs, SPDs, FAQs, and videos to BenefitsInteractive. Then integrate with HR systems and set up webhooks to keep your interactive hub updated automatically. These integrations ensure employees access the latest information seamlessly.
+
+<Callout kind="tip">
+Start with importing your core materials before setting up advanced integrations. Test each connection in a staging environment.
+</Callout>
+
+## Importing Carrier PDFs and Video Content
+
+Upload your materials directly through the dashboard or API to populate your hub with searchable Q&A and structured topics.
+
+<Steps>
+  <Step title="Prepare Files" icon="upload">
+    Gather your SPDs, plan summaries, carrier PDFs, and video URLs. Ensure videos are publicly accessible or hosted on approved platforms like YouTube or Vimeo.
+  </Step>
+  <Step title="Upload via Dashboard" icon="settings">
+    Navigate to the `Materials` section in your dashboard at `https://dashboard.example.com`. Drag and drop files or use the upload button.
+  </Step>
+  <Step title="API Import" icon="code">
+    Use the import API for bulk operations.
+    
+    <CodeGroup tabs="cURL,JavaScript">
+      ```bash
+      curl -X POST https://api.example.com/v1/materials/import \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@spdpdf.pdf" \
+        -F "type=pdf"
+      ```
+      ```javascript
+      const formData = new FormData();
+      formData.append('file', pdfFile);
+      formData.append('type', 'pdf');
+
+      await fetch('https://api.example.com/v1/materials/import', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` },
+        body: formData
+      });
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Verify Processing" icon="check-circle">
+    Monitor the processing queue. Materials convert into interactive Q&A within minutes.
+  </Step>
+</Steps>
+
+## Setting Up Webhooks for Notifications
+
+Webhooks notify your systems of events like new material uploads or employee interactions.
+
+<ParamField path="webhook_url" param-type="string" required="true">
+Your endpoint to receive webhook payloads, e.g., `https://your-webhook-url.com/webhook`.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="false">
+Optional bearer token for securing your webhook.
+</ParamField>
+
+Configure in dashboard or API:
+
+```javascript
+// Example webhook payload for material update
+{
+  "event": "material.updated",
+  "data": {
+    "id": "mat_123",
+    "type": "pdf",
+    "updated_at": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+<Callout kind="alert">
+Validate webhook signatures to prevent unauthorized access. Use HMAC SHA-256 with your secret.
+</Callout>
+
+## Integrating with HR Systems
+
+Connect BenefitsInteractive to popular HR platforms for automatic updates during open enrollment or policy changes.
+
+<Tabs>
+  <Tab title="Workday" icon="users">
+    Use Workday's API to sync employee data.
+    
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      const workdayData = await fetch('https://api.workday.com/employees', {
+        headers: { 'Authorization': `Bearer ${WORKDAY_TOKEN}` }
+      }).then(res => res.json());
+      
+      await fetch('https://api.example.com/v1/sync/hr', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` },
+        body: JSON.stringify({ provider: 'workday', data: workdayData })
+      });
+      ```
+      ```python
+      import requests
+      
+      workday_resp = requests.get('https://api.workday.com/employees', 
+                                headers={'Authorization': f'Bearer {WORKDAY_TOKEN}'})
+      requests.post('https://api.example.com/v1/sync/hr',
+                    json={'provider': 'workday', 'data': workday_resp.json()},
+                    headers={'Authorization': f'Bearer {YOUR_API_KEY}'})
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="BambooHR" icon="database">
+    Pull updates from BambooHR employee directory.
+    
+    ```bash
+    curl -X POST https://api.example.com/v1/sync/hr \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -d '{"provider": "bamboohr", "directory_id": "12345"}'
+    ```
+  </Tab>
+</Tabs>
+
+## Customizing Pathways for Specific Audiences
+
+Tailor navigation pathways for brokers, HR teams, or employees.
+
+<Columns cols={2}>
+  <Card title="Broker Pathways" icon="users" href="#broker-pathways">
+    Create client-specific views with custom Q&A flows.
+  </Card>
+  <Card title="HR Dashboards" icon="settings" href="#hr-dashways">
+    Add admin-only analytics and update tools.
+  </Card>
+  <Card title="Employee Tracks" icon="book-open" href="#employee-pathways">
+    Segment by role, location, or plan type.
+  </Card>
+  <Card title="Open Enrollment" icon="calendar" href="#oe-pathways">
+    Launch time-sensitive campaigns with deadlines.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Customization" default-open="false">
+Use the pathways API to define audience-specific routes:
+```javascript
+await fetch('https://api.example.com/v1/pathways', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${YOUR_API_KEY}`, 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    name: 'hr-team',
+    audience: 'hr',
+    steps: ['policy-overview', 'faq-search', 'contact-support']
+  })
+});
+```
+</Expandable>
+
+## Next Steps
+
+Test your integrations in a sandbox. Monitor usage via the dashboard analytics to refine setups.
+
+<Callout kind="success">
+Your hub is now dynamic! Employees get instant answers while you maintain control.
+</Callout>

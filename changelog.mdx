@@ -1,0 +1,130 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in BenefitsInteractive to stay informed on platform enhancements.
+---
+
+## Stay Up to Date
+
+<Callout kind="info">
+Follow our changelog to discover new features, performance improvements, and important fixes. Check back regularly or subscribe to notifications for automatic updates on platform enhancements.
+</Callout>
+
+BenefitsInteractive releases updates frequently to enhance your interactive benefits hub. You receive these automatically in your dashboard, but review migration notes for any breaking changes.
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Enhanced Q&A engine with natural language processing for more accurate employee queries
+- Added interactive enrollment pathways for Open Enrollment campaigns
+- New analytics dashboard to track top questions and content engagement
+
+## Improvements
+
+- Increased content upload limits for larger SPDs and carrier PDFs
+- Faster hub generation with optimized document processing
+
+## Bug Fixes
+
+- Fixed intermittent search failures on multi-PDF uploads
+- Resolved mobile responsiveness issues in the interactive hub preview
+</Update>
+
+<Update label="2024-09-25" description="v1.2.1" tags={["bugfix", "security"]}>
+## Bug Fixes
+
+- Patched potential XSS vulnerabilities in custom FAQ uploads
+- Corrected hub sharing permissions for brokers and consultants
+- Fixed video content embedding issues from external carriers
+
+## Security
+
+- Implemented stricter validation for uploaded materials to prevent malicious content
+</Update>
+
+<Update label="2024-09-10" description="v1.2.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Broker-specific solutions with client management portals
+- HR team ticketing integration to reduce repeated questions by 30-50%
+- Compliance tracker for document updates and audit logs
+
+## Breaking Changes
+
+- Updated hub configuration schema—review your existing setups
+- Deprecated legacy PDF parsing; migrate to new structured upload format
+
+## Migration Notes
+
+Update your hub configurations using the new schema:
+
+````json
+{
+  "hub": {
+    "theme": "modern",
+    "qaEnabled": true,
+    "analytics": { "trackEngagement": true }
+  }
+}
+````
+</Update>
+
+## Upgrade Process
+
+<Steps>
+  <Step title="Check Dashboard" icon="monitor">
+    Log in to your BenefitsInteractive dashboard at `https://app.benefitsinteractive.com`.
+  </Step>
+  <Step title="Review Changes" icon="book-open">
+    Navigate to the changelog section and read release notes for your version.
+  </Step>
+  <Step title="Apply Updates" icon="zap">
+    Click "Update Hub" to apply changes automatically.
+  </Step>
+  <Step title="Test Hub" icon="play-circle">
+    Preview your interactive benefits hub and test Q&A functionality.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+Most updates apply seamlessly, but test thoroughly during Open Enrollment preparation.
+</Callout>
+
+## Full Version History
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v1.3.0  | 2024-10-15 | Enhanced Q&A, analytics     |
+| v1.2.1  | 2024-09-25 | Security fixes              |
+| v1.2.0  | 2024-09-10 | Broker portals, breaking    |
+| v1.1.0  | 2024-08-05 | Initial Q&A features        |
+| v1.0.0  | 2024-07-20 | Platform launch             |
+
+## Resources
+
+<Columns cols={2}>
+  <Card title="Migration Guide" icon="help-circle" href="#migration">
+    Detailed steps for breaking changes and schema updates.
+  </Card>
+  <Card title="Status Page" icon="activity" href="https://status.benefitsinteractive.com" target="_blank">
+    Real-time updates on platform availability and incidents.
+  </Card>
+  <Card title="Feedback" icon="message-circle" href="/help-center">
+    Share suggestions for future releases.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Integrate updates with your systems.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Migration for v1.2.0" default-open="false">
+If you encounter issues with the new configuration schema, regenerate your hub:
+
+````bash
+# In your dashboard CLI (if enabled)
+bi-hub regenerate --config new-schema.json
+````
+
+Contact support at `support@benefitsinteractive.com` for assistance.
+</Expandable>
