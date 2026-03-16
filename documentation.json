@@ -67,6 +67,27 @@
         "icon": "help-circle",
         "pages": [
           {
+            "group": "By Role",
+            "pages": [
+              {
+                "title": "Master Admin",
+                "path": "master-admin"
+              },
+              {
+                "title": "Broker",
+                "path": "broker"
+              },
+              {
+                "title": "Group Admin",
+                "path": "group-admin"
+              },
+              {
+                "title": "Employee",
+                "path": "employee"
+              }
+            ]
+          },
+          {
             "title": "Help Center",
             "path": "help-center",
             "icon": "home"
