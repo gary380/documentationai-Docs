@@ -2,10 +2,14 @@
   "name": "BenefitsInteractive",
   "colors": {
     "light": {
-      "brand": "#4A6FA5"
+      "brand": "#079bbf",
+      "heading": "#1a1a1a",
+      "text": "#374151"
     },
     "dark": {
-      "brand": "#829FC9"
+      "brand": "#a7d77c",
+      "heading": "#f2f2f2",
+      "text": "#c1c1c1"
     }
   },
   "navigation": {
@@ -43,6 +47,27 @@
                 "title": "Integrations",
                 "path": "integrations",
                 "icon": "plug"
+              }
+            ]
+          },
+          {
+            "group": "By Role",
+            "pages": [
+              {
+                "title": "Master Admin",
+                "path": "master-admin"
+              },
+              {
+                "title": "Brokers",
+                "path": "brokers"
+              },
+              {
+                "title": "Group Admin",
+                "path": "group-admin"
+              },
+              {
+                "title": "Employee Guide",
+                "path": "employee"
               }
             ]
           }
@@ -114,5 +139,17 @@
         ]
       }
     ]
+  },
+  "logo-dark": "https://blob-cdn.documentation.ai/org-cab22840-4de6-42ef-9e55-1d6a709924c0/doc-10905992-cb4c-4e9d-88f5-3c83fcd7131f/1773670739332-6af0m0mtorl-BenefitsInteractiveLogo-Light-Version.png?q=85&fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-cab22840-4de6-42ef-9e55-1d6a709924c0/doc-10905992-cb4c-4e9d-88f5-3c83fcd7131f/1773670765891-vj83e4kv4mm-Top-Log-New-w-tagline-325.png?q=85&fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-cab22840-4de6-42ef-9e55-1d6a709924c0/doc-10905992-cb4c-4e9d-88f5-3c83fcd7131f/1773670880888-52ld254353p-Binny-Favicon.png?q=85&fm=auto&auto=compress%2Cformat",
+  "initialRoute": "help-center",
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Help",
+        "link": "https://benefitsinteractive.documentationai.com/employee"
+      }
+    }
   }
 }
