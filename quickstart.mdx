@@ -1,12 +1,13 @@
 ---
 title: Getting Started with BenefitsInteractive
-description: Set up your account and launch your first interactive benefits hub in minutes by connecting your materials and customizing content.
+description: >-
+  Set up your account and launch your first interactive benefits hub in minutes
+  by connecting your materials and customizing content.
 ---
-
 ## Prerequisites
 
-<Callout kind="info" title="Before You Begin">
-Prepare your materials including Summary Plan Descriptions (SPDs), plan summaries, carrier PDFs, FAQs, and any video content. Ensure you have admin access to your BenefitsInteractive account or sign up at `https://app.benefitsinteractive.app/signup`.
+<Callout kind="info" collapsed="false">
+  Prepare your materials including Summary Plan Descriptions (SPDs), plan summaries, carrier PDFs, FAQs, and any video content. Ensure you have admin access to your BenefitsInteractive account or sign up at `https://benefitsinteractive.app/login`
 </Callout>
 
 ## Complete Setup in 4 Steps
@@ -14,17 +15,13 @@ Prepare your materials including Summary Plan Descriptions (SPDs), plan summarie
 Follow these steps to create your first interactive benefits hub.
 
 <Steps>
-  <Step title="Create Your Account" icon="user-plus">
-    Visit `https://app.benefitsinteractive.app` and click **Sign Up**. Provide your email, company name, and role (HR, Broker, or Consultant).
+  <Step title="Create Your Account" icon="user-plus" title-type="p">
+    Obtain your unique GROUP ID from the BenefitsInteractive Admin team. Visit `https://benefitsinteractive.app` and click either the Google Auth method or the Magic Link to login. Provide your group ID, your name, and role (Employee, HR, Broker, or Consultant).
 
-    Verify your email and log in to the dashboard at `https://dashboard.benefitsinteractive.app`.
-
-    <Callout kind="tip">
-      Use a business email for team invites later.
-    </Callout>
+    Complete your profile after confirming your employer assignment.
   </Step>
 
-  <Step title="Upload Your Materials" icon="upload">
+  <Step title="Group Admins - Upload Your Materials" icon="upload" title-type="p">
     In the dashboard, navigate to **Content > Upload Materials**.
 
     Use the web uploader for quick setup or API for automation.
@@ -32,16 +29,20 @@ Follow these steps to create your first interactive benefits hub.
     <Tabs>
       <Tab title="Web UI" icon="upload-cloud">
         Drag and drop your files:
+
         - `health-spd.pdf` (Summary Plan Description)
+
         - `dental-plan-summary.pdf`
+
         - `faq.md` or `faq.docx`
+
         - Videos: `open-enrollment.mp4`
 
         Click **Process Files** to begin extraction.
       </Tab>
 
       <Tab title="API" icon="code">
-        <CodeGroup tabs="cURL,JavaScript">
+        <CodeGroup show-lines="true" tabs={[]}>
           ```bash
           curl -X POST https://api.example.com/v1/upload \
             -H "Authorization: Bearer YOUR_API_KEY" \
@@ -65,18 +66,20 @@ Follow these steps to create your first interactive benefits hub.
     </Tabs>
   </Step>
 
-  <Step title="Generate Your Hub" icon="zap">
+  <Step title="Generate Your Hub" icon="zap" title-type="p">
     Once uploaded, go to **Hubs > Create New Hub**.
 
     Select your uploaded materials and choose a template:
+
     - **Open Enrollment** for seasonal campaigns
+
     - **General Benefits** for year-round access
 
-    Click **Generate Hub**. Processing takes 2-5 minutes as AI extracts Q&A pairs and structures content.
+    Click **Generate Hub**. Processing takes 2-5 minutes as AI extracts Q\&A pairs and structures content.
   </Step>
 
-  <Step title="Preview and Launch" icon="rocket">
-    Review the generated hub in the preview pane. Edit Q&A, add custom topics, or tweak pathways.
+  <Step title="Preview and Launch" icon="rocket" title-type="p">
+    Review the generated hub in the preview pane. Edit Q\&A, add custom topics, or tweak pathways.
 
     Test natural-language queries like "What is my dental coverage?".
 
@@ -88,20 +91,21 @@ Follow these steps to create your first interactive benefits hub.
 
 ## What's Next?
 
-<Columns cols={3}>
-  <Card title="Authentication" icon="shield" href="/authentication">
+<Columns cols="3">
+  <Card title="Authentication" href="/authentication" icon="shield" horizontal="false">
     Secure your hub with API keys and user roles.
   </Card>
 
-  <Card title="Customization" icon="settings" href="/configuration">
+  <Card title="Customization" href="/configuration" icon="settings" horizontal="false">
     Advanced branding and content workflows.
   </Card>
 
-  <Card title="Analytics" icon="bar-chart-3" href="/introduction#features">
+  <Card title="Analytics" href="/introduction#features" icon="bar-chart-3" horizontal="false">
     Measure engagement and refine your hub.
   </Card>
 </Columns>
 
-<Callout kind="success" title="Congratulations!">
-Your interactive benefits hub is live. Employees can now get instant answers, reducing HR tickets by up to 50%. For support, check the [Help Center](/help-center).
+<Callout kind="success" collapsed="false">
+  Your interactive benefits hub is live. Employees can now get instant answers, reducing HR tickets by up to 50%. For support, check the [Help Center](/help-center).
 </Callout>
+
